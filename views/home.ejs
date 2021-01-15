@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap" rel="stylesheet">
+    <title>Home</title>
+
+</head>
+
+<body bgcolor="#e5e5e5">
+    <header>
+        <nav class="navbar sticky-top navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="color:black;" href="/">YELPCAMP</a>
+                <!-- <h1 class="text-center" style="color: blanchedalmond;">WELCOME TO YELPCAMP!</h1> -->
+            </div>
+        </nav>
+    </header>
+    <div class="flash">
+        <%- include('./partials/flash.ejs') %>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <div class="forms">
+                <div class="login">
+                    <h3>LOGIN</h3>
+                    <form class="needs-validation" action="/login" method="POST" novalidate>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                aria-describedby="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="signup">
+                    <h3>SIGN UP</h3>
+                    <form class="row g-3 needs-validation" action="/signup" method="POST" novalidate>
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                <input type="text" class="form-control" id="username"
+                                    aria-describedby="inputGroupPrepend" name="username" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" minlength="8"
+                                required>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<style>
+    body {
+
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+            url(https://images.data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIWFRUVFxcXFxcXFxcXHRUYFxcXFxUdGBoYHSggHRolHRcXIjEiJSkrLi4uHR8zODMtNygtLisBCgoKDQ0NDg0PGisZExkrKysrKysrKysrKysrNy0rKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJcBTQMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAHxABAQEBAQACAgMAAAAAAAAAAAER8GFBUQKBcbHB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDsNEWiCKUAwANIiwBFwAwMQFhQ7vQRQgIoAii4CGBgFExQEFAAAgABSFAMDABFvd9AgLQAAKgoIp3egIphoGAARFARe70hgEMAEUJASRQlAgQoCRQBFoBYgoH9ooAWGgFCmgi93hQAhhQRQBKuBvfQBAAgQn6BBTACEQFsKigmKi2gCKCUUA0DAAoAmCgAgKJFBDVACmAKiKCYuIsAolAVKoAimAED5ApUXu8BMVD8qBFhoAGgAQAhpQDu9RcJ3fYCYLaAUNADQCB3eAKkqKCQU7vARe70gAGmgIoBQQF0AEUpoJFhoAGmgUIAQEBYkWgJFCUCwSqASmABpgB3ehCQCosADAoECJgKad3iYCgAi0w7vAQUAM7vg1AUqLgBoQDu8EWwCBYAkUIBYJVoBP5hhoBhQEXABJVACAkBQSAsDADANAiKYAABvgnd6sAAAAAxFiTu+gWgAi6JQWlJ3fRQAADABFRQRQAh+hIAtSRQDBAXu9IUzu+QFZigBoAHd6gKIsgGERYAUiApYEoAABEoC6BQAAAsABNXQAABJADu8XBO7wFCmAUqQBS1JV0ExdCABSgCLIBEU0AggLEXQCEAAEBQgBTAAtEXQSrCAFKAFEoChQEUt7vlKClNNBFtAAkKUBZ+2VgAkWUCAYBKAAVIuAilICKmgKd/IUCkpQDu8BKC93qLhAIJ+JoLCxKoAaAmrpIAECAVIqWAqLe76QFEalBDAwCUKAJ+WfJFsAJQAwABFANQAFAAxQEFARFANABAAUgAYUANMADQAAAQUBP8awAQgAAAAAagA//Z.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
+        color: black;
+        background-color: rgba(245, 245, 245, 0.4);
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        width: auto;
+    }
+
+    .forms {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 70px;
+    }
+
+    .login {
+        width: 40%;
+        border-right: 1px solid rgba(56, 55, 55, 0.5);
+        padding-right: 90px;
+        padding-top: 80px;
+    }
+
+    .signup {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: black;
+        text-align: center;
+    }
+
+    .flash {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+</style>
+
+<script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()</script>

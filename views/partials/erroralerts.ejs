@@ -1,0 +1,14 @@
+<%- layout('/layout/boilerplate') %>
+
+    <div class="row mt-5">
+        <div class="col-6 offset-3 mx-auto">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">
+                    <%= err.message %>
+                </h4>
+                <!-- add err.stack to display err stack -->
+                <hr>
+                <p class="mb-0 text-center"><a href="/campground" class="btn btn-primary d-inline ">BACK</a></p>
+            </div>
+        </div>
+    </div>

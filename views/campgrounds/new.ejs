@@ -1,0 +1,44 @@
+<%- layout('/layout/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center mt-5 mb-5"> Add a new campground</h1>
+
+        <div class="col-6 offset-3">
+            <form action="/campground" method='POST' class="d-inline needs-validation" enctype="multipart/form-data"
+                novalidate>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                    <input type="text" class="form-control" name="title" required>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">location</span>
+                    <input type="text" class="form-control" name="location" required>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text">price</span>
+                    <input type="number" name="price" class="form-control" required>
+                </div>
+                <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">description</span>
+                    <input type="text" name="description" class="form-control" required>
+                </div>
+                <div class="mb-4">
+                    <label for="formFile" class="form-label"></label>
+                    <input class="form-control" type="file" name="images" id="formFile" multiple>
+                </div>
+                <!-- <div class="input-group mb-4">
+                <span class="input-group-text" id="inputGroup-sizing-default">Image Url</span>
+                <input type="text" name="image" class="form-control" required>
+            </div> -->
+                <button class="btn btn-primary">ADD</button>
+            </form>
+
+            <a href="/campground" class="btn btn-primary d-inline">CANCEL</a>
+        </div>
+    </div>
+
+    <script src="/javascripts/formValidation.js"></script>
+
+    <script>
+
+    </script>
