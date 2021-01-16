@@ -1,6 +1,6 @@
-const ErrorClass = require('D:/Workstation/Javascript/yelpCamp/utils/ErrorClass');
-const review = require('D:/Workstation/Javascript/yelpCamp/models/reviews');
-const campground = require('D:/Workstation/Javascript/yelpCamp/models/campground');
+const ErrorClass = require('../utils/ErrorClass');
+const review = require('../models/reviews');
+const campground = require('../models/campground');
 
 //To add a review
 module.exports.addReview = async (req, res) => {

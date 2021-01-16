@@ -1,5 +1,5 @@
-const campground = require('D:/Workstation/Javascript/yelpCamp/models/campground');
-const ErrorClass = require('D:/Workstation/Javascript/yelpCamp/utils/ErrorClass');
+const campground = require('../models/campground');
+const ErrorClass = require('../utils/ErrorClass');
 const multer = require('multer');
 const { cloudinary } = require('../Cloudinary/cloudinary');
 const mbxGeoCoding = require("@mapbox/mapbox-sdk/services/geocoding")
