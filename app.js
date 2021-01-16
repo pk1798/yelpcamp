@@ -32,9 +32,9 @@ const MongoStore = require('connect-mongo')(session);
 // const storage = require('./Cloudinary/cloudinary')
 // var upload = multer({ storage })
 
-//
+//process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
 // 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(() => {
         console.log('Connected!')
@@ -52,7 +52,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
 
-const secret = process.env.SECRET || 'Thisisasecret'
+const secret = process.env.SECRET || 'Thisisasecret';
 
 
 const store = new MongoStore({
@@ -110,8 +110,9 @@ app.use((err, req, res, next) => {
     res.render('partials/erroralerts', { err })
 })
 
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('listeningg on port 3000')
 })
 
