@@ -113,17 +113,18 @@
     </style>
 
     <script>
-        const goeLoc = '<%- JSON.stringify(campgrounds.geometry.coordinates) %>'
+        const geoLoc = '<%- JSON.stringify(campgrounds.geometry.coordinates) %>';
+        // console.log(geoLoc)  //[78.815951,10.758797]
         mapboxgl.accessToken = '<%-process.env.MAPBOX_TOKEN %>';
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-            center: goeLoc, // starting position [lng, lat]
+            center: [78.815951, 10.758797], // starting position [lng, lat] 
             zoom: 13    // starting zoom
         });
         var marker = new mapboxgl.Marker({
             color: "#FF0000",
             draggable: true
-        }).setLngLat(goeLoc)
+        }).setLngLat([78.815951, 10.758797])
             .addTo(map);
     </script>
