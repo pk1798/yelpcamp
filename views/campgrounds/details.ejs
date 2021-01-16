@@ -113,7 +113,7 @@
     </style>
 
     <script>
-        const goeLoc = '<%= JSON.stringify(campgrounds.geometry.coordinates) %>'
+        const goeLoc = '<%- JSON.stringify(campgrounds.geometry.coordinates) %>'
         mapboxgl.accessToken = '<%-process.env.MAPBOX_TOKEN %>';
         const map = new mapboxgl.Map({
             container: 'map',
